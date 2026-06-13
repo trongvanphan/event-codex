@@ -8,6 +8,8 @@
 - Gen Z is price-conscious and socially influenced; Millennials place high value on convenience and saved time.
 - Instant-gratification behavior makes fragmented calls, messages, and long onboarding particularly costly.
 - Personalization can reduce cognitive load by ranking relevant venue-time-price combinations.
+- Owner-provided assumptions indicate a large utilization gap: other-time occupancy is 40%, compared with 70% after 18:00 on weekdays and 100% after 16:00 on weekends.
+- The owner reports that a 5% discount can shift a booking, while schedule and distance remain higher-priority constraints than price.
 
 ### Acute needs
 
@@ -19,13 +21,14 @@
 
 ### Validation still required
 
-The local context does not prove that occupation reliably predicts preferred play time or that discounts are the main solution. Research must quantify:
+The owner inputs improve the initial model but are not transaction-level evidence. Research must validate:
 
-- Empty court-hours by venue, day, and lead time
-- Causes of non-booking
-- User schedule flexibility and minimum meaningful saving
+- Observed occupancy by court-hour and booking lead time
+- Quantified shares of schedule, distance, price, and partner constraints
+- Whether a 5% offer changes completed bookings in a controlled test
 - Incidence of partner shortage
-- Owner willingness to publish inventory and pay commission
+- Owner commission tolerance
+- Channel fragmentation and inventory synchronization effort
 
 ## Viable
 
@@ -46,6 +49,16 @@ Illustrative booking economics:
 `Marketplace contribution = commission + service revenue - payment cost - incentive - support/refund cost`
 
 A discounted booking is valuable only when its expected contribution exceeds the probability-weighted contribution of waiting for a full-price booking.
+
+Owner-provided unit economics:
+
+- Full price: 120,000 VND per booked hour
+- Variable cost: 60,000 VND per booked hour
+- Full-price contribution: 60,000 VND
+- Price after 5% discount: 114,000 VND
+- Discounted contribution: 54,000 VND
+
+For the modeled 40% off-peak segment, a blanket 5% discount must increase occupancy to at least 44.44% to preserve contribution. At 45% occupancy, blanket-discount contribution improves by only 0.96M VND over four weeks. Targeting only incremental demand produces materially better economics.
 
 ### Competitive advantage
 
@@ -109,4 +122,4 @@ An LLM is not required for core pricing. It may later help with conversational s
 
 ### Overall assessment
 
-The marketplace and rules-based recommendation MVP is feasible. Fully automated dynamic pricing should not be promised until reliable inventory, demand, conversion, and margin data are available.
+The marketplace and rules-based recommendation MVP is feasible. The modeled off-peak inventory is economically meaningful, but blanket discounts have a narrow margin of safety. Fully automated dynamic pricing should not be promised until reliable inventory, demand, conversion, cancellation, and margin data are available.

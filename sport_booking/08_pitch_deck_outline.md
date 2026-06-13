@@ -22,7 +22,8 @@ Position the team around local marketplace operations, mobile product execution,
 ### For owners
 
 - Court inventory is perishable.
-- Off-peak periods and cancellations produce unrecoverable losses.
+- In the supplied stadium model, other-time occupancy is only 40%, leaving 1,920 of 3,200 off-peak court-hours unused over four weeks.
+- Weekend demand after 16:00 is already modeled at 100%, so indiscriminate discounting would give away peak revenue.
 - Owners lack demand visibility and fear cannibalizing full-price bookings.
 - Manual scheduling makes accurate marketplace inventory difficult.
 
@@ -90,6 +91,16 @@ More venues create better player choice -> more players create better occupancy 
 - Expand only when inventory accuracy, repeat booking, and local liquidity meet thresholds.
 
 ### Economic proof
+
+The four-week synthetic baseline for 10 courts is:
+
+- 4,480 available court-hours
+- 2,320 booked court-hours
+- 51.79% total occupancy
+- 278.4M VND revenue
+- 139.2M VND contribution before fixed and platform costs
+
+A 5% discount lowers contribution per booking from 60,000 to 54,000 VND. If applied to all off-peak bookings, occupancy must increase from 40% to 44.44% just to preserve contribution. This supports targeted, measurable offers rather than blanket coupons.
 
 Show incremental occupied court-hours, revenue per available court-hour, contribution after incentives, and venue retention. Gross bookings alone are insufficient.
 

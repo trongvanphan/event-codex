@@ -81,26 +81,39 @@ Venue owners need to create incremental demand for expiring off-peak inventory w
 
 Combine **personalized schedule alternatives** with **social demand creation and inventory recovery**. Pricing alone cannot solve the case where a user has no partners, does not trust the venue, or never sees the available slot.
 
+Recommendations should balance:
+
+- **Exploitation:** reliable venues, familiar times, and options likely to convert.
+- **Exploration:** a limited number of new venues, time windows, or game formats that may reveal additional flexibility.
+
+This avoids popularity bias, prevents the same peak venues from dominating results, and helps new venues receive qualified exposure.
+
 ### MVP concept
 
 A marketplace that lets a user browse nearby live availability, select preferences, see transparent best-value alternatives, pay, invite friends, and join a waitlist. Owners publish inventory and bounded off-peak promotions and monitor occupancy and realized revenue.
 
 ## Prototype
 
-Create a high-fidelity clickable mobile prototype with two linked flows:
+Create a mid-fidelity clickable mobile prototype for the riskiest assumption:
 
-1. Player: browse as guest -> set lightweight preferences -> compare recommended slots -> inspect "why recommended" -> book -> invite friends.
-2. Owner: view occupancy heatmap -> inspect an underfilled period -> accept/edit a recommended campaign -> monitor expected impact.
+> Will a player accept a different court-hour when the product presents a relevant, transparent trade-off between schedule, travel, quality, and saving?
 
-Use hardcoded recommendations and owner forecasts. No production ML is required for the prototype.
+The test flow is: browse as guest -> state schedule flexibility -> compare the preferred option with a best-value alternative -> inspect "why recommended" -> choose an option.
+
+Use hardcoded recommendations. Booking, payment, invitations, owner analytics, and production ML are outside this discovery prototype.
 
 ## Test
 
 ### Participants
 
+Player recommendation study:
+
 - 5 office professionals
 - 5 students or price-sensitive young players
 - 3 flexible/shift workers
+
+Separate owner concept study:
+
 - 5 venue owners or managers
 
 ### Questions
@@ -110,6 +123,9 @@ Use hardcoded recommendations and owner forecasts. No production ML is required 
 - Is the reason for each recommendation clear?
 - Do users perceive offers as useful or unfair?
 - Is finding partners as important as finding a court?
+
+For the separate owner study:
+
 - Will owners trust a recommendation with a price floor and expected impact?
 - Which inventory, cancellation, and payment workflows prevent adoption?
 
@@ -118,8 +134,9 @@ Use hardcoded recommendations and owner forecasts. No production ML is required 
 - At least 80% complete the player flow without assistance.
 - Median time from landing to selected slot is below 60 seconds.
 - At least 40% consider a recommended alternative time.
-- At least 4 of 5 owners understand and are willing to trial bounded promotions.
 - No repeated finding that hidden or personalized prices feel discriminatory.
+
+These are provisional discovery thresholds, not market benchmarks. Owner-study success criteria should be defined after reviewing actual venue economics and workflows.
 
 ### Key experiments after prototype
 
@@ -128,3 +145,5 @@ Use hardcoded recommendations and owner forecasts. No production ML is required 
 - Immediate signup versus browse-first onboarding
 - Waitlist alert versus public last-minute promotion
 - Recommended campaign versus owner-created campaign
+
+Owner campaign trust should be tested separately with a low-fidelity concept and historical venue data. Combining both sides in one prototype would make results difficult to interpret.

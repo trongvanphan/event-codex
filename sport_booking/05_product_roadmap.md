@@ -63,7 +63,7 @@ The product will not begin with unrestricted AI pricing, nationwide expansion, o
 
 ### Venue outcomes
 
-- Off-peak occupancy lift
+- Off-peak occupancy lift from the modeled 40% baseline
 - Revenue per available court-hour
 - Cancellation refill rate
 - Active inventory accuracy
@@ -72,6 +72,7 @@ The product will not begin with unrestricted AI pricing, nationwide expansion, o
 ### Guardrails
 
 - Realized price and contribution margin
+- Blanket-promotion break-even occupancy of 44.44% for a 5% discount under current unit economics
 - No-show and cancellation rate
 - Refund completion time
 - Notification opt-out
@@ -81,27 +82,20 @@ The product will not begin with unrestricted AI pricing, nationwide expansion, o
 
 ### Now: Validate and transact
 
-- Interview players and venue owners
-- Launch one dense city zone with 5-10 venues
-- Build inventory, search, booking, payment, and owner calendar
-- Add browse-first preference onboarding
-- Add transparent, rules-based off-peak offers
-- Instrument all discovery and booking events
+- **Validate demand flexibility:** establish whether transparent time, distance, and price alternatives change player choice.
+- **Establish trustworthy local liquidity:** make a dense pilot zone useful through accurate supply and reliable booking completion.
+- **Enable measurable transactions:** create a booking baseline that connects discovery, payment, attendance, and venue economics.
 
 ### Next: Create and recover demand
 
-- Waitlists and cancellation refill
-- Invite, split payment, and recurring group
-- Open games and basic skill matching
-- Owner occupancy dashboard and campaign suggestions
-- Controlled experiments with generic holdout experiences
-- Student/corporate programs with explicit eligibility
+- **Reduce coordination failure:** make group formation, payment sharing, and repeat play easier.
+- **Recover expiring inventory:** refill cancellations and underused periods through qualified demand.
+- **Prove promotion incrementality:** compare personalized and generic experiences with holdouts and margin guardrails.
+- **Build owner confidence:** expose understandable occupancy, realized-price, and campaign-impact evidence.
 
 ### Later: Optimize the network
 
-- Predictive slot demand and no-show risk
-- Contextual recommendation and notification timing
-- Multi-venue passes and memberships
-- League and tournament tools
-- Conversational booking
-- Multi-city expansion after local liquidity thresholds are met
+- **Predict and prevent lost inventory:** forecast demand, cancellation, and no-show risk.
+- **Improve relevance without narrowing choice:** optimize contextual ranking while preserving exploration and new-venue discovery.
+- **Increase network retention:** support memberships, recurring communities, leagues, and multi-venue value.
+- **Scale proven market units:** expand only after local liquidity, reliability, and contribution thresholds are repeatable.

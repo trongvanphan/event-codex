@@ -52,6 +52,7 @@ Players see the best combination of time, location, quality, and final price wit
 - As an owner, I want booking status updated atomically so that courts cannot be double-booked.
 - As an owner, I want to set minimum price, maximum discount, eligible periods, inventory cap, and campaign dates.
 - As an owner, I want to pause or override a campaign.
+- As an owner, I want peak-period protection so that the system does not recommend discounts for weekend slots after 16:00 or weekday slots after 18:00 unless I explicitly enable them.
 
 ### Owner analytics
 
@@ -65,6 +66,8 @@ Players see the best combination of time, location, quality, and final price wit
 - The system may personalize ranking and eligible offer presentation but must not infer willingness to pay to secretly increase price.
 - Every offer impression and booking must retain campaign, eligibility, and experiment metadata.
 - Venue floors and promotion budgets must be enforced server-side.
+- Ranked results must reserve bounded exposure for relevant new venues or time alternatives so historical popularity does not permanently suppress discovery.
+- Recommendation success must include confirmed and attended booking outcomes, not only clicks or checkout starts.
 
 ## Acceptance Criteria
 
@@ -75,8 +78,11 @@ Players see the best combination of time, location, quality, and final price wit
 - Recommended offers include a concise explanation.
 - Users can disable personalized ranking and notifications.
 - Owners cannot configure a price below their floor.
+- The default 5% off-peak offer is 114,000 VND for a 120,000 VND court-hour.
+- A blanket 5% off-peak campaign must show a 44.44% break-even occupancy reference based on the supplied 60,000 VND variable cost.
 - The dashboard separates occupancy lift from raw discounted bookings.
 - Cancellation refill alerts respect user time, distance, sport, and notification preferences.
+- Results contain relevant variety without violating the user's hard constraints.
 
 ## Scope
 

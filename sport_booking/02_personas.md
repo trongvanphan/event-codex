@@ -1,6 +1,8 @@
 # Personas
 
-## Persona 1: Minh, the Convenience-First Organizer
+The MVP uses one primary persona and two secondary personas. These are hypothesis-based proto-personas derived from repository context, not validated research personas. They must be updated after interviews and booking-data analysis.
+
+## Primary: Minh, the Convenience-First Organizer
 
 ### Descriptive
 
@@ -34,11 +36,11 @@ Minh is a 31-year-old product manager in Ho Chi Minh City. He organizes badminto
 - Splitting payment and replacing a player
 - Receiving a useful alternative when the preferred time is full
 
-## Persona 2: Lan, the Price-Flexible Student
+## Secondary: Lan, the Price-Flexible Player
 
 ### Descriptive
 
-Lan is a 21-year-old university student in Da Nang with an irregular class schedule and a limited recreation budget. She plays pickleball or badminton socially and can sometimes move a session to a quieter hour, but not every morning or afternoon is free.
+Lan is a 21-year-old university student in Da Nang with an irregular class schedule and a limited recreation budget. She represents players who can sometimes move a session to a quieter hour, but whose availability cannot be inferred reliably from occupation or age.
 
 ### Motivations
 
@@ -68,45 +70,11 @@ Lan is a 21-year-old university student in Da Nang with an irregular class sched
 - Joining an open game with similar skill
 - Receiving a fast refund or replacement after a change
 
-## Persona 3: Huy, the Flexible Solo Player
+## Secondary: Ms. Thao, the Venue Operator
 
 ### Descriptive
 
-Huy is a 27-year-old freelance designer in Hanoi. His availability changes weekly, and he often wants to play during off-peak hours. His main obstacle is not price or inventory, but finding people at a compatible level.
-
-### Motivations
-
-- Turn flexible time into regular exercise
-- Find balanced, friendly games
-- Build a trusted player network
-- Avoid inactive chat groups
-
-### Interactions
-
-- Searches on mobile at short notice
-- Will travel farther for a good game
-- Values ratings, skill labels, and attendance reliability
-- Comfortable with recommendations if he can control them
-
-### Pain Points
-
-- Open slots are useless without partners
-- Self-reported skill levels can be unreliable
-- No-shows ruin the game
-- Too many irrelevant notifications cause immediate opt-out
-
-### Moments that Matter
-
-- Finding an open game that is actually likely to happen
-- Seeing host reliability and player level
-- Being matched without exposing unnecessary personal information
-- Building confidence after the first successful game
-
-## Persona 4: Ms. Thao, the Venue Operator
-
-### Descriptive
-
-Thao is a 42-year-old manager of an eight-court badminton venue in Ho Chi Minh City. Evening occupancy is strong, but weekday daytime use is inconsistent. She manages bookings through calls, Zalo, and a spreadsheet and worries about double-booking and unnecessary discounts.
+Thao is a 42-year-old manager of a 10-court sports venue in Ho Chi Minh City. Modeled occupancy reaches 70% after 18:00 on weekdays and 100% after 16:00 on weekends, while other periods average 40%. She manages bookings through calls, Zalo, and a spreadsheet and worries about double-booking and unnecessary discounts.
 
 ### Motivations
 
@@ -135,3 +103,7 @@ Thao is a 42-year-old manager of an eight-court badminton venue in Ho Chi Minh C
 - Avoiding the first double-booking
 - Seeing an empty slot refilled profitably
 - Understanding whether a promotion increased margin, not just bookings
+
+## Deferred Segment: Solo Player
+
+Solo-player matching remains an important product hypothesis because empty inventory may reflect missing partners rather than price. It is deferred as a full persona until research confirms the size of this need and the MVP includes open-game matching.
