@@ -1,0 +1,13 @@
+strategy,off_peak_occupancy_rate,booked_court_hours,incremental_booked_hours_vs_baseline,realized_revenue_vnd,contribution_vnd,contribution_change_vs_baseline_vnd,contribution_change_vs_baseline_rate
+blanket_5_percent_discount,0.4,1280,0,145920000,69120000,-7680000,-0.1
+incremental_only_5_percent_offer,0.4,1280,0,153600000,76800000,0,0
+blanket_5_percent_discount,0.425,1360,80,155040000,73440000,-3360000,-0.04375
+incremental_only_5_percent_offer,0.425,1360,80,162720000,81120000,4320000,0.05625
+blanket_5_percent_discount,0.4444444444,1422.22,142.22,162133333.32,76799999.99,-0.01,0
+incremental_only_5_percent_offer,0.4444444444,1422.22,142.22,169813333.32,84479999.99,7679999.99,0.1
+blanket_5_percent_discount,0.45,1440,160,164160000,77760000,960000,0.0125
+incremental_only_5_percent_offer,0.45,1440,160,171840000,85440000,8640000,0.1125
+blanket_5_percent_discount,0.5,1600,320,182400000,86400000,9600000,0.125
+incremental_only_5_percent_offer,0.5,1600,320,190080000,94080000,17280000,0.225
+blanket_5_percent_discount,0.6,1920,640,218880000,103680000,26880000,0.35
+incremental_only_5_percent_offer,0.6,1920,640,226560000,111360000,34560000,0.45

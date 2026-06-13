@@ -1,0 +1,21 @@
+assumption,value,notes
+model_type,synthetic,"Owner-provided operating assumptions, not observed booking records"
+stadium_count,1,One stadium
+court_count,10,Interprets '10 venue' as 10 bookable courts
+model_period,2026-06-01 to 2026-06-28,Representative four-week period
+timezone,Asia/Ho_Chi_Minh,Local operating timezone
+opening_hours,06:00-22:00,Assumption; user did not provide opening hours
+slot_duration_hours,1,Matches quoted hourly price
+weekday_after_18_occupancy,0.7,Owner-provided
+weekend_after_16_occupancy,1,Owner-provided; overrides evening rule
+other_time_occupancy,0.4,Owner-provided
+full_price_vnd,120000,Owner-provided
+variable_cost_vnd,60000,Owner-provided per booked court-hour
+minimum_shift_discount_rate,0.05,Owner-provided
+discounted_price_vnd,114000,Calculated
+constraint_priority,schedule > distance > price > partner,Owner-provided ordinal ranking; no shares supplied
+sport_difference,none_assumed,Owner states pickleball and badminton are the same
+cancellation_no_show_input,"0% on 3 times of month, 20% of full price",Ambiguous; excluded from financial calculations pending confirmation
+owner_commission_tolerance,unknown,Requires testing
+channel_fragmentation_burden,unknown,Requires workflow research
+liquidity_requirement,unknown,Requires pilot data

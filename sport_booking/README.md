@@ -17,6 +17,18 @@ The opportunity is not merely "personalized discounts." Empty courts can result 
 
 The product should therefore optimize **incremental occupied court-hours and venue contribution margin**, not total discount redemptions.
 
+## Owner-provided operating baseline
+
+The synthetic four-week operating model assumes one stadium with 10 courts:
+
+- 70% occupancy on weekdays for slots starting at 18:00 or later
+- 100% occupancy on Saturday and Sunday for slots starting at 16:00 or later
+- 40% occupancy at other times
+- 120,000 VND price and 60,000 VND variable cost per booked court-hour
+- 5% minimum discount needed to influence booking time
+
+With assumed opening hours of 06:00-22:00, this produces 4,480 available court-hours, 2,320 booked hours, 51.79% total occupancy, 278.4M VND revenue, and 139.2M VND contribution over four weeks. See `10_operating_model.md`.
+
 ## Recommended solution
 
 Build a two-sided mobile-first marketplace with five connected loops:
@@ -57,11 +69,22 @@ Occupation and student status can help with cold start or eligibility for a stud
 
 - Ranked courts and time slots
 - "Best value near you" alternatives
+- A controlled mix of familiar choices and novel venues/times so recommendations do not become repetitive
 - Open games with compatible skill and schedule
 - Rebooking shortcuts
 - Waitlist and cancellation alerts
 - Bundles, passes, and loyalty rewards
 - Notification timing and channel
+
+### Recommendation pipeline
+
+The context on recommendation systems suggests a practical three-stage design:
+
+1. **Candidate retrieval:** Find court-hours that satisfy hard constraints such as sport, date, capacity, availability, price floor, and travel radius.
+2. **Ranking:** Score candidates using explicit preferences, observed behavior, venue reliability, final price, and current context.
+3. **Re-ranking:** Apply availability checks, owner rules, recommendation diversity, exploration, and fairness constraints before display.
+
+Optimize for completed, attended bookings and repeat value rather than offer clicks. A misleading low-price recommendation may increase clicks while reducing trust, attendance, or repeat use.
 
 ## Pricing principles
 
@@ -117,6 +140,10 @@ Occupation and student status can help with cold start or eligibility for a stud
 - Lack of partners is a material cause of unbooked court-hours.
 - Targeted offers create incremental bookings rather than subsidizing bookings that would happen anyway.
 
+## Context review
+
+See `09_context_review.md` for the comprehensive audit of all files under `contexts`, their applicability, evidence limitations, and the changes made after the audit.
+
 ## Included artifacts
 
 - `01_design_thinking.md`
@@ -127,5 +154,7 @@ Occupation and student status can help with cold start or eligibility for a stud
 - `06_prd.md`
 - `07_prototype_plan.md`
 - `08_pitch_deck_outline.md`
+- `09_context_review.md`
+- `10_operating_model.md`
 
 These documents use the repository context as directional workshop evidence. Market figures and behavioral claims should be independently verified before an investment decision or public pitch.

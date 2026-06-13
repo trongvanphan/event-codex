@@ -1,0 +1,5 @@
+demand_segment,available_court_hours,booked_court_hours,occupancy_rate,price_vnd,variable_cost_per_booked_hour_vnd,revenue_vnd,variable_cost_vnd,contribution_vnd,revenue_per_available_hour_vnd,contribution_per_available_hour_vnd
+other_off_peak,3200,1280,0.4,120000,60000,153600000,76800000,76800000,48000,24000
+weekday_evening_18_plus,800,560,0.7,120000,60000,67200000,33600000,33600000,84000,42000
+weekend_peak_16_plus,480,480,1,120000,60000,57600000,28800000,28800000,120000,60000
+total,4480,2320,0.5178571428571429,120000,60000,278400000,139200000,139200000,62142.857142857145,31071.428571428572
