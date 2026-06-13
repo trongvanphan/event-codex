@@ -60,6 +60,8 @@ Owner-provided unit economics:
 
 For the modeled 40% off-peak segment, a blanket 5% discount must increase occupancy to at least 44.44% to preserve contribution. At 45% occupancy, blanket-discount contribution improves by only 0.96M VND over four weeks. Targeting only incremental demand produces materially better economics.
 
+For the 100% occupancy target, 2,160 additional court-hours must be sold. If discounts are restricted to those incremental hours, both approved campaign ranges remain contribution-positive, including 30%. If discounts are applied to every booking, the contribution break-even discount is approximately 24.1%; a 30% blanket campaign reduces contribution by 31.68M VND versus baseline.
+
 ### Competitive advantage
 
 - Cross-venue demand and inventory network

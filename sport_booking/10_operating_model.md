@@ -51,6 +51,70 @@ If the 5% discount is given to every off-peak booking, occupancy must rise from 
 
 The incremental-only strategy assumes existing demand continues to pay full price and the offer is used only to create bookings that would not otherwise happen. Real performance will lie between these simplified extremes.
 
+## Full-Occupancy Target With Two Campaigns
+
+The owner-approved campaigns are interpreted as discount ranges:
+
+- **Campaign 1:** 5%-20%; evaluated at 5%, 12.5% midpoint, and 20%
+- **Campaign 2:** 10%-30%; evaluated at 10%, 20% midpoint, and 30%
+
+This is a target-state impact analysis, not a demand forecast. It assumes the campaigns successfully increase total occupancy from 51.79% to 100%. The existing evidence does not prove which discount will achieve that result.
+
+### Capacity required
+
+- Baseline booked hours: 2,320
+- Full-capacity booked hours: 4,480
+- Additional bookings required: 2,160 court-hours
+- Booking growth required: 93.1%
+- Occupancy lift required: 48.21 percentage points
+
+### Strategy A: Discount only incremental bookings
+
+Existing 2,320 bookings remain at 120,000 VND. Only the 2,160 newly filled hours receive the campaign discount.
+
+| Campaign point | Discount | Discounted price | Revenue at 100% | Contribution at 100% | Contribution lift |
+|---|---:|---:|---:|---:|---:|
+| Campaign 1 minimum | 5% | 114,000 | 524.6M | 255.8M | +116.6M |
+| Campaign 1 midpoint | 12.5% | 105,000 | 505.2M | 236.4M | +97.2M |
+| Campaign 1 maximum | 20% | 96,000 | 485.8M | 217.0M | +77.8M |
+| Campaign 2 minimum | 10% | 108,000 | 511.7M | 242.9M | +103.7M |
+| Campaign 2 midpoint | 20% | 96,000 | 485.8M | 217.0M | +77.8M |
+| Campaign 2 maximum | 30% | 84,000 | 459.4M | 191.0M | +51.8M |
+
+Every tested discount remains contribution-positive because an otherwise empty hour contributes zero, while even a 30% discounted booking contributes 24,000 VND before fixed and platform costs.
+
+### Strategy B: Blanket discount all bookings
+
+Every booking, including existing demand, receives the campaign discount.
+
+| Campaign point | Discount | Revenue at 100% | Contribution at 100% | Change vs baseline |
+|---|---:|---:|---:|---:|
+| Campaign 1 minimum | 5% | 510.7M | 241.9M | +102.7M |
+| Campaign 1 midpoint | 12.5% | 470.4M | 201.6M | +62.4M |
+| Campaign 1 maximum | 20% | 430.1M | 161.3M | +22.1M |
+| Campaign 2 minimum | 10% | 483.8M | 215.0M | +75.8M |
+| Campaign 2 midpoint | 20% | 430.1M | 161.3M | +22.1M |
+| Campaign 2 maximum | 30% | 376.3M | 107.5M | **-31.7M** |
+
+At full occupancy, the blanket-discount break-even point is approximately **24.1%**. A blanket discount above this level produces less contribution than the current 51.79%-occupied baseline, even though every court is booked.
+
+### Interpretation
+
+- Campaign 1 is financially positive across its full 5%-20% range if full occupancy is achieved.
+- Campaign 2 is positive when discounts are targeted to incremental bookings.
+- Campaign 2 becomes destructive at its 30% maximum if applied to all bookings.
+- Full occupancy is not the same as optimal profit. A 100%-occupied venue at a 30% blanket discount earns 31.7M VND less contribution than the current baseline.
+- The system should escalate discounts only for unsold inventory and should not automatically expose existing full-price demand to deeper offers.
+
+### Recommended campaign policy
+
+1. Use Campaign 1 as the default ladder: start at 5%, then test 10%, 15%, and at most 20%.
+2. Use Campaign 2 only for highly perishable inventory, such as same-day empty slots, and apply it to qualified incremental demand.
+3. Never blanket-discount peak inventory.
+4. Cap automatic blanket discounts below 24%; operationally, use a stricter 20% ceiling.
+5. Stop increasing discount once additional contribution no longer improves.
+6. Track occupancy and contribution together; do not optimize occupancy alone.
+
 ## Product Implications
 
 ### Protect peak periods
@@ -103,5 +167,6 @@ It could mean several different things, such as three cancellations per month, a
 - `data/synthetic_court_hours.csv`: 4,480 court-hour rows
 - `data/monthly_summary.csv`: segment and total baseline economics
 - `data/discount_scenarios.csv`: blanket versus incremental-only 5% offer scenarios
+- `data/full_occupancy_campaigns.csv`: both campaign ranges at full occupancy under targeted and blanket discount scopes
 - `data/assumptions.csv`: supplied inputs, calculated inputs, and unresolved assumptions
 - `scripts/generate_synthetic_data.mjs`: reproducible generator

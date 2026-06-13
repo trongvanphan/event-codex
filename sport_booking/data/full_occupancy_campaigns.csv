@@ -1,0 +1,13 @@
+campaign,range_point,discount_rate,discount_scope,target_occupancy_rate,total_booked_hours,incremental_booked_hours,realized_price_on_discounted_hours_vnd,discounted_contribution_per_hour_vnd,revenue_vnd,contribution_vnd,contribution_change_vs_baseline_vnd,contribution_change_vs_baseline_rate
+campaign_1_5_to_20,minimum,0.05,incremental_hours_only,1,4480,2160,114000,54000,524640000,255840000,116640000,0.837931
+campaign_1_5_to_20,minimum,0.05,all_bookings_blanket,1,4480,2160,114000,54000,510720000,241920000,102720000,0.737931
+campaign_1_5_to_20,midpoint,0.125,incremental_hours_only,1,4480,2160,105000,45000,505200000,236400000,97200000,0.698276
+campaign_1_5_to_20,midpoint,0.125,all_bookings_blanket,1,4480,2160,105000,45000,470400000,201600000,62400000,0.448276
+campaign_1_5_to_20,maximum,0.2,incremental_hours_only,1,4480,2160,96000,36000,485760000,216960000,77760000,0.558621
+campaign_1_5_to_20,maximum,0.2,all_bookings_blanket,1,4480,2160,96000,36000,430080000,161280000,22080000,0.158621
+campaign_2_10_to_30,minimum,0.1,incremental_hours_only,1,4480,2160,108000,48000,511680000,242880000,103680000,0.744828
+campaign_2_10_to_30,minimum,0.1,all_bookings_blanket,1,4480,2160,108000,48000,483840000,215040000,75840000,0.544828
+campaign_2_10_to_30,midpoint,0.2,incremental_hours_only,1,4480,2160,96000,36000,485760000,216960000,77760000,0.558621
+campaign_2_10_to_30,midpoint,0.2,all_bookings_blanket,1,4480,2160,96000,36000,430080000,161280000,22080000,0.158621
+campaign_2_10_to_30,maximum,0.3,incremental_hours_only,1,4480,2160,84000,24000,459840000,191040000,51840000,0.372414
+campaign_2_10_to_30,maximum,0.3,all_bookings_blanket,1,4480,2160,84000,24000,376320000,107520000,-31680000,-0.227586

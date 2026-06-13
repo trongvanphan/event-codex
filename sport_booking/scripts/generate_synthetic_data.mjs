@@ -185,6 +185,68 @@ const scenarios = scenarioRates.flatMap((occupancy) => {
   ];
 });
 
+const totalIncrementalHours = totalAvailable - totalBooked;
+const campaignDiscounts = [
+  { campaign: "campaign_1_5_to_20", point: "minimum", discount_rate: 0.05 },
+  { campaign: "campaign_1_5_to_20", point: "midpoint", discount_rate: 0.125 },
+  { campaign: "campaign_1_5_to_20", point: "maximum", discount_rate: 0.2 },
+  { campaign: "campaign_2_10_to_30", point: "minimum", discount_rate: 0.1 },
+  { campaign: "campaign_2_10_to_30", point: "midpoint", discount_rate: 0.2 },
+  { campaign: "campaign_2_10_to_30", point: "maximum", discount_rate: 0.3 },
+];
+
+const fullOccupancyScenarios = campaignDiscounts.flatMap((campaign) => {
+  const campaignPrice = PRICE_VND * (1 - campaign.discount_rate);
+  const discountedContributionPerHour = campaignPrice - VARIABLE_COST_VND;
+  const incrementalOnlyRevenue =
+    totalBooked * PRICE_VND + totalIncrementalHours * campaignPrice;
+  const fullVariableCost = totalAvailable * VARIABLE_COST_VND;
+  const blanketRevenue = totalAvailable * campaignPrice;
+  return [
+    {
+      campaign: campaign.campaign,
+      range_point: campaign.point,
+      discount_rate: campaign.discount_rate,
+      discount_scope: "incremental_hours_only",
+      target_occupancy_rate: 1,
+      total_booked_hours: totalAvailable,
+      incremental_booked_hours: totalIncrementalHours,
+      realized_price_on_discounted_hours_vnd: campaignPrice,
+      discounted_contribution_per_hour_vnd: discountedContributionPerHour,
+      revenue_vnd: incrementalOnlyRevenue,
+      contribution_vnd: incrementalOnlyRevenue - fullVariableCost,
+      contribution_change_vs_baseline_vnd:
+        incrementalOnlyRevenue - fullVariableCost - (totalRevenue - totalCost),
+      contribution_change_vs_baseline_rate:
+        (incrementalOnlyRevenue - fullVariableCost) / (totalRevenue - totalCost) - 1,
+    },
+    {
+      campaign: campaign.campaign,
+      range_point: campaign.point,
+      discount_rate: campaign.discount_rate,
+      discount_scope: "all_bookings_blanket",
+      target_occupancy_rate: 1,
+      total_booked_hours: totalAvailable,
+      incremental_booked_hours: totalIncrementalHours,
+      realized_price_on_discounted_hours_vnd: campaignPrice,
+      discounted_contribution_per_hour_vnd: discountedContributionPerHour,
+      revenue_vnd: blanketRevenue,
+      contribution_vnd: blanketRevenue - fullVariableCost,
+      contribution_change_vs_baseline_vnd:
+        blanketRevenue - fullVariableCost - (totalRevenue - totalCost),
+      contribution_change_vs_baseline_rate:
+        (blanketRevenue - fullVariableCost) / (totalRevenue - totalCost) - 1,
+    },
+  ].map((row) =>
+    Object.fromEntries(
+      Object.entries(row).map(([key, value]) => [
+        key,
+        typeof value === "number" ? round(value, 6) : value,
+      ]),
+    ),
+  );
+});
+
 const assumptions = [
   ["model_type", "synthetic", "Owner-provided operating assumptions, not observed booking records"],
   ["stadium_count", 1, "One stadium"],
@@ -200,6 +262,9 @@ const assumptions = [
   ["variable_cost_vnd", VARIABLE_COST_VND, "Owner-provided per booked court-hour"],
   ["minimum_shift_discount_rate", DISCOUNT_RATE, "Owner-provided"],
   ["discounted_price_vnd", DISCOUNTED_PRICE_VND, "Calculated"],
+  ["target_occupancy_rate", 1, "Owner target; scenario target, not a forecast"],
+  ["campaign_1_discount_range", "5%-20%", "Owner-approved"],
+  ["campaign_2_discount_range", "10%-30%", "Owner-approved"],
   ["constraint_priority", "schedule > distance > price > partner", "Owner-provided ordinal ranking; no shares supplied"],
   ["sport_difference", "none_assumed", "Owner states pickleball and badminton are the same"],
   ["cancellation_no_show_input", "0% on 3 times of month, 20% of full price", "Ambiguous; excluded from financial calculations pending confirmation"],
@@ -211,6 +276,10 @@ const assumptions = [
 fs.writeFileSync(path.join(outputDir, "synthetic_court_hours.csv"), toCsv(slots));
 fs.writeFileSync(path.join(outputDir, "monthly_summary.csv"), toCsv(summary));
 fs.writeFileSync(path.join(outputDir, "discount_scenarios.csv"), toCsv(scenarios));
+fs.writeFileSync(
+  path.join(outputDir, "full_occupancy_campaigns.csv"),
+  toCsv(fullOccupancyScenarios),
+);
 fs.writeFileSync(
   path.join(outputDir, "assumptions.csv"),
   "assumption,value,notes\n" +
@@ -225,7 +294,12 @@ console.log(JSON.stringify({
   occupancy_rate: totalBooked / totalAvailable,
   revenue_vnd: totalRevenue,
   contribution_vnd: totalRevenue - totalCost,
+  incremental_hours_to_full_occupancy: totalIncrementalHours,
   blanket_discount_break_even_occupancy: offPeak.occupancy_rate *
     ((PRICE_VND - VARIABLE_COST_VND) /
       (DISCOUNTED_PRICE_VND - VARIABLE_COST_VND)),
+  blanket_full_occupancy_break_even_discount_rate:
+    1 -
+    ((totalRevenue - totalCost) / totalAvailable + VARIABLE_COST_VND) /
+      PRICE_VND,
 }, null, 2));

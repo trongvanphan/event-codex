@@ -53,6 +53,7 @@ Players see the best combination of time, location, quality, and final price wit
 - As an owner, I want to set minimum price, maximum discount, eligible periods, inventory cap, and campaign dates.
 - As an owner, I want to pause or override a campaign.
 - As an owner, I want peak-period protection so that the system does not recommend discounts for weekend slots after 16:00 or weekday slots after 18:00 unless I explicitly enable them.
+- As an owner, I want Campaign 1 to support a controlled 5%-20% discount ladder and Campaign 2 to support a 10%-30% last-minute ladder.
 
 ### Owner analytics
 
@@ -80,6 +81,8 @@ Players see the best combination of time, location, quality, and final price wit
 - Owners cannot configure a price below their floor.
 - The default 5% off-peak offer is 114,000 VND for a 120,000 VND court-hour.
 - A blanket 5% off-peak campaign must show a 44.44% break-even occupancy reference based on the supplied 60,000 VND variable cost.
+- Automated blanket campaigns must not exceed 20%. Discounts above 20% require unsold-inventory eligibility and must not reprice existing bookings.
+- The system must warn that a 30% blanket discount at full occupancy is modeled to reduce four-week contribution by 31.68M VND versus baseline.
 - The dashboard separates occupancy lift from raw discounted bookings.
 - Cancellation refill alerts respect user time, distance, sport, and notification preferences.
 - Results contain relevant variety without violating the user's hard constraints.

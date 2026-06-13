@@ -73,6 +73,7 @@ The product will not begin with unrestricted AI pricing, nationwide expansion, o
 
 - Realized price and contribution margin
 - Blanket-promotion break-even occupancy of 44.44% for a 5% discount under current unit economics
+- Full-occupancy blanket-discount ceiling of 24.1%, with a 20% operational guardrail
 - No-show and cancellation rate
 - Refund completion time
 - Notification opt-out

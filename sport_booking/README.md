@@ -29,6 +29,12 @@ The synthetic four-week operating model assumes one stadium with 10 courts:
 
 With assumed opening hours of 06:00-22:00, this produces 4,480 available court-hours, 2,320 booked hours, 51.79% total occupancy, 278.4M VND revenue, and 139.2M VND contribution over four weeks. See `10_operating_model.md`.
 
+The full-occupancy target requires 2,160 additional booked hours. Under the two approved campaigns:
+
+- Targeted discounts on only incremental bookings remain contribution-positive through 30%.
+- A blanket 30% discount at full occupancy reduces contribution to 107.5M VND, which is 31.7M VND below baseline.
+- The calculated full-occupancy blanket-discount ceiling is approximately 24.1%; the recommended operational ceiling is 20%.
+
 ## Recommended solution
 
 Build a two-sided mobile-first marketplace with five connected loops:
@@ -94,6 +100,7 @@ Optimize for completed, attended bookings and repeat value rather than offer cli
 - Put venue-defined floors, maximum discounts, peak protections, and campaign budgets around automation.
 - Compare every promotion against a holdout group to measure bookings that would not otherwise occur.
 - Stop a discount when it cannibalizes full-price demand or reduces contribution margin.
+- Apply 20%-30% offers only to expiring, unsold inventory and qualified incremental demand.
 
 ## Feature priority
 

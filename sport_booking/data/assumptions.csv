@@ -13,6 +13,9 @@ full_price_vnd,120000,Owner-provided
 variable_cost_vnd,60000,Owner-provided per booked court-hour
 minimum_shift_discount_rate,0.05,Owner-provided
 discounted_price_vnd,114000,Calculated
+target_occupancy_rate,1,"Owner target; scenario target, not a forecast"
+campaign_1_discount_range,5%-20%,Owner-approved
+campaign_2_discount_range,10%-30%,Owner-approved
 constraint_priority,schedule > distance > price > partner,Owner-provided ordinal ranking; no shares supplied
 sport_difference,none_assumed,Owner states pickleball and badminton are the same
 cancellation_no_show_input,"0% on 3 times of month, 20% of full price",Ambiguous; excluded from financial calculations pending confirmation

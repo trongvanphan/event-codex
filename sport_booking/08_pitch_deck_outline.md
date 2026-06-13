@@ -102,6 +102,8 @@ The four-week synthetic baseline for 10 courts is:
 
 A 5% discount lowers contribution per booking from 60,000 to 54,000 VND. If applied to all off-peak bookings, occupancy must increase from 40% to 44.44% just to preserve contribution. This supports targeted, measurable offers rather than blanket coupons.
 
+Reaching 100% occupancy requires 2,160 incremental booked hours. Both approved campaign ranges are profitable when limited to those new bookings. However, a 30% blanket discount produces only 107.5M VND contribution, 31.7M VND below the current baseline despite full occupancy. This makes contribution, not occupancy alone, the optimization target.
+
 Show incremental occupied court-hours, revenue per available court-hour, contribution after incentives, and venue retention. Gross bookings alone are insufficient.
 
 ## Feasibility
